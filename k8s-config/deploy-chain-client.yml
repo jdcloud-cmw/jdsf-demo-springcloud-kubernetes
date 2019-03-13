@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: jdsf-chain-client-deployment
+spec:
+  replicas: 1 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: jdsf-chain-client
+    spec:
+      containers:
+      - name: jdsf-chain-client
+        image: wdwqw/jdsf-client:0.1.0
+        ports:
+        - containerPort: 8888
+        env:
+        - name: CHAIN_HOST
+          value: "collector-tc-1tn3d6lpkbvgg-nlb.jvessel-open-hb.jdcloud.com:14268"

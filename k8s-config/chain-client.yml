@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jdsf-chain-client
+spec:
+  ports:
+  - port: 8888
+    targetPort: 8888
+    name: http
+  selector:
+    app: jdsf-chain-client
+  type: NodePort
