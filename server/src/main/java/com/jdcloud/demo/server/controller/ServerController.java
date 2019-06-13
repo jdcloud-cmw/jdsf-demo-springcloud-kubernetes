@@ -24,7 +24,6 @@ public class ServerController {
 
     @RequestMapping("/{name}")
     public String getName(@PathVariable String name){
-
         return name + "<------server------>" + businessService.getBusinessRandom();
     }
 

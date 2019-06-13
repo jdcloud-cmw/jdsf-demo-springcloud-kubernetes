@@ -1,6 +1,8 @@
 package com.jdcloud.demo.server.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ecwid.consul.v1.ConsulClient;
 
 import java.util.Random;
 
@@ -13,9 +15,12 @@ import java.util.Random;
 @Service
 public class BusinessService {
 
+    @Autowired
+    private ConfigService configService;
 
-    public Integer getBusinessRandom(){
+    public String  getBusinessRandom(){
         Random random = new Random();
-        return random.nextInt();
+        String testValue = configService.getTestKey();
+        return testValue + ":::" + random.nextInt();
     }
 }
