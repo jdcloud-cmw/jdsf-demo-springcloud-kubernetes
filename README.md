@@ -1,3 +1,6 @@
+# 总体说明
+本项目演示如果使用Kubernetes进行服务发现，使用京东云调用链分析服务。如果考虑使用使用京东云基于注册中心的增强服务治理能力，请参考[jdsf-demo-springcloud-kubernetes-consul]( https://github.com/jdcloud-cmw/jdsf-demo-springcloud-kubernetes-consul)
+
 # 环境准备
 
 1. 要求jdk版本1.8以上；<br />
